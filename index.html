@@ -66,7 +66,7 @@
         <p>Bury Books is an independent bookshop located in the market town of Bury in Greater Manchester, where it
             occupies a large and attractive traditional building right in the middle of the town's busy High Street.
             The shop was set up by Rick & Emma Atherton, in collaboration with local authors.
-            <br/><br/>
+            <br /><br />
             Bury Books has an extensive stock across all subject areas, including fiction, nature, technology and
             children's, serving the local community and visitors. Our Outdoor lounge hosts the largest selection of
             outdoor books in England.
@@ -74,45 +74,91 @@
     </div>
     <!-- Main Content -->
     <main>
+        <!-- Container for Featured Books section -->
         <div class="featured-books-div">
             <h2>Featured</h2>
             <div class="feature-book-card">
                 <div>
                     <img src="" alt="Book cover">
                 </div>
-                <div class="title">
-                    book title
-                </div>
-                <div class="author">
-                    author
-                </div>
-                <div class="page-count">
-                    page count
-                </div>
-                <div class="strapline">
-                    strapline
+                <div class="card-contents">
+                    <div class="title">
+                        book title
+                    </div>
+                    <div class="author">
+                        author
+                    </div>
+                    <div class="page-count">
+                        page count
+                    </div>
+                    <div class="description">
+                        description
+                    </div>
                 </div>
             </div>
             <div class="feature-book-card">
                 <div>
                     <img src="" alt="Book cover">
                 </div>
-                <div class="title">
-                    book title
+                <div class="card-contents">
+                    <div class="title">
+                        book title
+                    </div>
+                    <div class="author">
+                        author
+                    </div>
+                    <div class="page-count">
+                        page count
+                    </div>
+                    <div class="description">
+                        description
+                    </div>
                 </div>
-                <div class="author">
-                    author
+            </div>
+        </div>
+        <!-- Container for Standard Books section -->
+        <div class="standard-books-div">
+            <div class="standard-book-card">
+                <div>
+                    <img src="" alt="Book cover">
                 </div>
-                <div class="page-count">
-                    page count
+                <div class="card-contents">
+                    <div class="title">
+                        book title
+                    </div>
+                    <div class="author">
+                        author
+                    </div>
+                    <div class="page-count">
+                        page count
+                    </div>
+                    <div class="description">
+                        description
+                    </div>
                 </div>
-                <div class="strapline">
-                    strapline
+            </div>
+            <div class="standard-book-card">
+                <div>
+                    <img src="" alt="Book cover">
+                </div>
+                <div class="card-contents">
+                    <div class="title">
+                        book title
+                    </div>
+                    <div class="author">
+                        author
+                    </div>
+                    <div class="page-count">
+                        page count
+                    </div>
+                    <div class="description">
+                        description
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
+    <div id="content"></div>
     <!-- Footer -->
     <footer>
         <div class="footer-socials">
@@ -124,7 +170,8 @@
                 </li>
                 <li>
                     <a href="https://facebook.com" aria-label="Go to our Facebook page" target="_blank"
-                        class="footer-social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-facebook-square"></i>
+                        class="footer-social-media-icon" rel="noopener noreferer"><i
+                            class="fa-brands fa-facebook-square"></i>
                     </a>
                 </li>
                 <li>
@@ -136,8 +183,19 @@
         </div>
 
     </footer>
-
-
+    <script src="assets/js/script.js"></script>
+    <script>
+        fetch("https://www.googleapis.com/books/v1/volumes?q=HTML5/")
+            .then(response => response.text())
+            .then( data => displayData(data))
+            .catch((e) => {
+                console.error("Error: ", e);
+            })
+        
+            function displayData(data) {
+                document.getElementById("content").innerText = data;
+            }
+    </script>
 </body>
 
 </html>
