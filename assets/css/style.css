@@ -1,18 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-
+/* || GENERAL STYLES */
+body,
 html {
     margin: 0;
-  }
-  
-  body {
-    max-width: 2600px;
-    height: 100%;
-    font-family: Roboto, sans-serif;
-    font-size: 1.6rem;
-    font-weight: 300;
-    color: #000;
-    margin: 0 auto;
+    overflow-x: hidden;
     padding: 0;
-    border: none;
-  }
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    font: 1rem;
+    font-weight: 400;
+    color: #100303;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* |||| MEDIA QUERIES  */
+
+/* Small devices (smartphones, up to 767px) */
+@media (max-width: 767px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
