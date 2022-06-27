@@ -4,6 +4,11 @@ This static website has been built as part of an induction task for a large UK f
 
 https://www.googleapis.com/books/v1/volumes?q=HTML5
 
+
+[Link to Website](https://rickofmanc.github.io/bury-books/)
+
+
+
 <br />
 
 * Wire-frames for mobile and desktop were been provided, with a mobile first design approach taken to achieve both layouts in a single style-sheet. 
@@ -31,15 +36,18 @@ remove the class.
 <br/>
 
 ### Nice To Have:
-[x] No use of CSS frame work
-[x] Avoid the use of JavaScript to display the mobile burger menu
-[x] Push the task to a public repository to document your commit history
-[x] Cross-browser compatible - please comment which browsers you've
+- [x] No use of CSS frame work
+- [x] Avoid the use of JavaScript to display the mobile burger menu
+- [x] Push the task to a public repository to document your commit history.
+- [x] Cross-browser compatible - please comment which browsers you've
 tested on. This has been tested on Google Chrome, Mozilla Firefox, Microsoft Edge and Safari.
-[x] Tests for your code. Lighthouse testing as part of the Chrome Developer Tools has been undertaken with the following initial results. The amber 75% for Best Practices is as a result making requests from local host to HTTPS. This has occurred due to the nature of this task and would not be identified in production.
+- [x] Tests for your code. Lighthouse testing as part of the Chrome Developer Tools has been undertaken with the following initial results. The amber 75% for Best Practices is as a result making requests from local host to HTTPS. This has occurred due to the nature of this task and would not be identified in production.
 
 <p align="center">
     <img src="readme-images/lighthouse-testing-results.png" alt="website page testing results"/>
 </p>
 
-
+Code validation tests have also been performed:
+* HTML document has been checked by the W3 Validator with no errors or warnings to show.
+* The single style sheet passed the W3C CSS Validation Service without error.
+* The JavaScript code was passed through the JSHint.com service without a major error being identified.

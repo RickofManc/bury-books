@@ -1,5 +1,3 @@
-const API_URL = "https://www.googleapis.com/books/v1/volumes?q=HTML5";
-
 /**
  * This function receives all the json data from the
  * fetchAPIBookDataFromGoogle function and returns
@@ -9,7 +7,7 @@ const API_URL = "https://www.googleapis.com/books/v1/volumes?q=HTML5";
  */
 function createBook( bookInfo ){
     console.log(bookInfo)
-    const volumeInfo = bookInfo.volumeInfo
+    const volumeInfo = bookInfo.volumeInfo;
     return `<div class="standard-book-card is-selected">
         <div class="card-image">
             <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
@@ -20,8 +18,24 @@ function createBook( bookInfo ){
             <h4 class="page-count">${volumeInfo.pageCount} Pages</h4>
             <p class="description">${volumeInfo.description}</p>
         </div>
-    </div>`
+    </div>`;
 }
+
+function createFeaturedBooks( bookInfo ){
+    console.log(bookInfo[data.length - 1]);
+    const volumeInfo = bookInfo.volumeInfo;
+    return `<div class="featured-book-card is-selected">
+        <div class="featured-card-image">
+            <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
+        </div>
+        <div class="featured-card-contents">
+            <h2 class="featured-title">${volumeInfo.title}</h2>
+            <h3 class="featured-authors">By ${volumeInfo.authors}</h3>
+            <h4 class="featured-page-count">${volumeInfo.pageCount} Pages</h4>
+            <p class="featured-description">${volumeInfo.description}</p>
+        </div>
+    </div>`;
+};
 
 /**
  * Provides a fetch request to the Google Books API.
@@ -41,11 +55,16 @@ function fetchAPIBookDataFromGoogle() {
         const books = json.items
         json.items
         const results = books.map(book=>createBook(book))
-        console.log(results)
-        document.getElementById("book-listings-container").innerHTML = results.join("")
-    
-    } ).catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
-}
+        console.log(results);
+        document.getElementById("book-listings-container").innerHTML = results.join("") })
+    // .then( json => {
+    //     const featured_books = json.featured_items
+    //     json.featured_items
+    //     const output = featured_books.map(book=>createFeaturedBooks(book))
+    //     console.log(output);
+    //     document.getElementById("featured_books-listings-container").innerHTML = output.join("") })
+    .catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
+};
 
 /**
  * On DOM page load the function to 
