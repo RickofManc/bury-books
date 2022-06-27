@@ -74,6 +74,10 @@ header {
     margin-right: 0.5rem;
 }
 
+.social-media-icon i:hover {
+    color: #ffbe3c7e;
+}
+
 
 /* || NAVBAR & NAV-MENU STYLES */
 .nav-toggle,
@@ -218,9 +222,9 @@ header {
     height: 30rem;
 }
 
-.is-selected:active {
+.is-selected:hover {
     background-color: #ffbe3c7e;
-
+    transition: ease-in-out, 3000ms;
 }
 
 .holding-message-div {
@@ -372,6 +376,10 @@ footer {
         font-size: 2.5rem;
         color: #fff;
         margin: 1rem;
+    }
+
+    .footer-social-media-icon i:hover {
+        color: #ffbe3c7e;
     }
 
 }

@@ -26,11 +26,10 @@ I was given the freedom to choose whichever library or framework I wished. As it
 - [x] Each book in the list should display the book cover, title, subtitle, all authors, number of pages and description.
 - [x] You should be able to select on a book anywhere on the page by
 clicking on them, it should be clear the user has made a selection, add a class of is-selected.
-- [x] You should be able to click on a selected book a second time to
-remove the class.
+- [x] You should be able to click on a selected book a second time to remove the class.
+- ***I have opted for a 3000ms ease-in-out style to feedback to users which books they have hovered over.***
 - [x] Reloading the page should remember the state of the selected books.
-- [ ] Use the last two books from the JSON array and display those in the
-'Featured' books column only.
+- [ ] Use the last two books from the JSON array and display those in the 'Featured' books column only.
 - [ ] The book description should be a maximum of 140 characters.
 
 <br/>
@@ -40,14 +39,32 @@ remove the class.
 - [x] Avoid the use of JavaScript to display the mobile burger menu
 - [x] Push the task to a public repository to document your commit history.
 - [x] Cross-browser compatible - please comment which browsers you've
-tested on. This has been tested on Google Chrome, Mozilla Firefox, Microsoft Edge and Safari.
-- [x] Tests for your code. Lighthouse testing as part of the Chrome Developer Tools has been undertaken with the following initial results. The amber 75% for Best Practices is as a result making requests from local host to HTTPS. This has occurred due to the nature of this task and would not be identified in production.
+tested on.
+- [x] Tests for your code.
+
+
+<hr>
+
+
+## Testing
+
+**Code validation** 
+The following tests have been performed:
+* HTML document has been checked by the W3 Validator with no errors or warnings to show.
+* The single style sheet passed the W3C CSS Validation Service without error.
+* The JavaScript code was passed through the JSHint.com service without a major error being identified.
+
+**Browser**
+This has been tested on Google Chrome, Mozilla Firefox, Microsoft Edge and Safari.
+
+**Device**
+As part of the development of media queries this website has been tested on a smallest device of an iPhone 5 at 320x568px, through to iPhone 6/7/8 at 414x736px, a SurfacePro, laptop at 1366x768px and desktop monitor at 1920x1080px.
+
+**Performance**
+ Lighthouse testing as part of the Chrome Developer Tools has been undertaken with the following initial results. The Amber 75% for Best Practices is as a result making requests from local host to HTTPS. This has occurred due to the nature of this task and would not be identified in production.
 
 <p align="center">
     <img src="readme-images/lighthouse-testing-results.png" alt="website page testing results"/>
 </p>
 
-Code validation tests have also been performed:
-* HTML document has been checked by the W3 Validator with no errors or warnings to show.
-* The single style sheet passed the W3C CSS Validation Service without error.
-* The JavaScript code was passed through the JSHint.com service without a major error being identified.
+
