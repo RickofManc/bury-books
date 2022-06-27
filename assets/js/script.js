@@ -11,14 +11,14 @@ function createBook( bookInfo ){
     console.log(bookInfo)
     const volumeInfo = bookInfo.volumeInfo
     return `<div class="standard-book-card">
-        <div>
+        <div class="card-image">
             <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
         </div>
         <div class="card-contents">
-            <div class="title">${volumeInfo.title}</div>
-            <div class="author">${volumeInfo.author}</div>
-            <div class="page-count">${volumeInfo.pageCount}</div>
-            <div class="description">${volumeInfo.description}</div>
+            <h2 class="title">${volumeInfo.title}</h2>
+            <h3 class="authors">By ${volumeInfo.authors}</h3>
+            <h4 class="page-count">${volumeInfo.pageCount} Pages</h4>
+            <p class="description">${volumeInfo.description}</p>
         </div>
     </div>`
 }
@@ -42,7 +42,7 @@ function fetchAPIBookDataFromGoogle() {
         json.items
         const results = books.map(book=>createBook(book))
         console.log(results)
-        document.getElementById("output").innerHTML = results.join("")
+        document.getElementById("book-listings-container").innerHTML = results.join("")
     
     } ).catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
 }

@@ -26,8 +26,8 @@ header {
     align-items: center;
     row-gap: 2rem;
     width: 100%;
-    height: 10rem;
-    padding: 1rem;
+    height: 8rem;
+    padding-top: 0.25rem;
 }
 
 .header-logo {
@@ -39,7 +39,7 @@ header {
 }
 
 .header-name {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 500;
     color: #363d5f;
     margin-left: 2rem;
@@ -81,6 +81,7 @@ header {
     justify-content: center;
     align-items: center;
     padding-inline-start: 0;
+    margin-top: 0;
 }
 
 .nav-list li {
@@ -115,26 +116,94 @@ header {
     padding: 1rem 5rem;
 }
 
-/* || MAIN CONTENT STYLES */
-.featured-books-div {
+/* || HOMEPAGE BOOK LISTING STYLES */
+.homepage-book-listings-section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+/* Standard books section */
+.standard-books-section {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin: 2rem 0.5rem;
+    width: 60rem;
+    background: #f7f7f7;
+}
+
+.standard-book-card {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 28rem;
+    height: 10rem;
+    margin: 1rem;
+}
+
+.card-image {
+    width: 8rem;    
+}
+
+.card-image img {
+    object-fit: contain;
+    max-height: 10.5rem;
+    min-width: 8rem;
+}
+
+.card-contents {
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.authors {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.page-count {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+}
+
+.description {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    max-height: 3rem;
+    overflow: hidden;
+    font-size: small;
+}
+
+/* Featured books section */
+.featured-books-section {
     float: right;
     display: flex;
     flex-flow: column;
     text-align: center;
-    margin: 2rem 5rem 2rem 2rem;
+    margin: 2rem 0.5rem;
     background: #ffbd3c;
+    width: 20rem;
 }
 
-.featured-books-div h2 {
+.featured-books-section h2 {
     font-size: 2rem;
     text-transform: uppercase;
 }
 
 .feature-book-card {
     margin: 0.5rem 0;
-    width: 20rem;
+    width: 18rem;
     height: 30rem;
 }
+
 
 /* || FOOTER STYLES */
 footer {
@@ -151,6 +220,7 @@ footer {
     header {
         height: 3rem;
         width: auto;
+        margin-top: 1.5rem;
     }
     
     .header-logo,
@@ -167,6 +237,7 @@ footer {
 
     .header-name h1 {
         margin: 0;
+        padding-left: 1rem;
     }
 
     /* || NAVBAR & NAV-MENU STYLES */
@@ -181,6 +252,7 @@ footer {
     vertical-align: middle;
     width: 100%;
     height: 3rem;
+    margin-top: 1rem;
     background-color: #363d5f;
     }
 
@@ -221,8 +293,21 @@ footer {
         padding: 0 0.5rem;
     }
 
-    /* || MAIN CONTENT STYLES */
-    .featured-books-div {
+    /* || HOMEPAGE BOOK LISTING STYLES */
+    
+    /* Standard books section */
+    .standard-books-section {
+        width: auto;
+        order: 1;
+    }
+
+    .standard-book-card {
+        width: 23rem;
+    }
+
+    /* Featured books section */
+    .featured-books-section {
+        order: 0;
         float: none;
         display: flex;
         flex-flow: column;
