@@ -10,7 +10,7 @@ const API_URL = "https://www.googleapis.com/books/v1/volumes?q=HTML5";
 function createBook( bookInfo ){
     console.log(bookInfo)
     const volumeInfo = bookInfo.volumeInfo
-    return `<div class="standard-book-card">
+    return `<div class="standard-book-card is-selected">
         <div class="card-image">
             <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
         </div>
