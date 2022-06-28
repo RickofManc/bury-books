@@ -22,17 +22,17 @@ function createBook( bookInfo ){
 }
 
 function createFeaturedBooks( bookInfo ){
-    console.log(bookInfo[data.length - 1]);
+    console.log(bookInfo);
     const volumeInfo = bookInfo.volumeInfo;
-    return `<div class="featured-book-card is-selected">
-        <div class="featured-card-image">
-            <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
-        </div>
+    return `<div class="featured-book-card">
         <div class="featured-card-contents">
-            <h2 class="featured-title">${volumeInfo.title}</h2>
-            <h3 class="featured-authors">By ${volumeInfo.authors}</h3>
-            <h4 class="featured-page-count">${volumeInfo.pageCount} Pages</h4>
-            <p class="featured-description">${volumeInfo.description}</p>
+            <h2 class="title featured">${volumeInfo.title}</h2>
+            <h3 class="authors featured">By ${volumeInfo.authors}</h3>
+            <h4 class="page-count featured">${volumeInfo.pageCount} Pages</h4>
+            <p class="description featured">${volumeInfo.description}</p>
+        </div>
+        <div class="featured-image">
+            <img src="${volumeInfo.imageLinks.thumbnail}" alt="Book cover">
         </div>
     </div>`;
 };
@@ -43,6 +43,9 @@ function createFeaturedBooks( bookInfo ){
  * If the response is not ok an error is provided.
  * If the response is ok the json data is passed
  * as 'books' into the createBook function.
+ * If the response is ok the json data is sliced
+ * to provide the last two entries for the createFeaturedBooks 
+ * function.
  */
 function fetchAPIBookDataFromGoogle() {
     fetch('https://www.googleapis.com/books/v1/volumes?q=HTML5')
@@ -53,20 +56,16 @@ function fetchAPIBookDataFromGoogle() {
         return response.json() })
     .then( json => {
         const books = json.items
+        const featured_books = json.items.slice(-2);
         json.items
         const results = books.map(book=>createBook(book))
+        const outputs = featured_books.map(book=>createFeaturedBooks(book))
         console.log(results);
-        document.getElementById("book-listings-container").innerHTML = results.join("") })
-    // .then( json => {
-    //     const featured_books = json.featured_items
-    //     json.featured_items
-    //     const output = featured_books.map(book=>createFeaturedBooks(book))
-    //     console.log(output);
-    //     document.getElementById("featured_books-listings-container").innerHTML = output.join("") })
+        console.log(outputs);
+        document.getElementById("book-listings-container").innerHTML = results.join("")
+        document.getElementById("featured_books-listings-container").innerHTML = outputs.join("") })
     .catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
 };
-
-
 
 
 /**

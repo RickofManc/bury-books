@@ -30,7 +30,7 @@ clicking on them, it should be clear the user has made a selection, add a class 
 - ***I have opted for a 3000ms ease-in-out style to feedback to users which books they have hovered over.***
 - [x] Reloading the page should remember the state of the selected books.
 - [ ] Use the last two books from the JSON array and display those in the 'Featured' books column only.
-- [ ] The book description should be a maximum of 140 characters.
+- [x] The book description should be a maximum of 140 characters. Retrospectively I should of used a Form to display the API data, as this method would of allowed me to cleanly limit characters as opposed to the CSS approach I've taken.
 
 <br/>
 
