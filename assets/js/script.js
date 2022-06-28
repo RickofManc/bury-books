@@ -66,6 +66,9 @@ function fetchAPIBookDataFromGoogle() {
     .catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
 };
 
+
+
+
 /**
  * On DOM page load the function to 
  * fetch data from the Google Books API

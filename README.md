@@ -45,8 +45,11 @@ tested on.
 
 <hr>
 
+<br/>
 
 ## Testing
+
+<br/>
 
 **Code validation** 
 The following tests have been performed:
@@ -54,11 +57,17 @@ The following tests have been performed:
 * The single style sheet passed the W3C CSS Validation Service without error.
 * The JavaScript code was passed through the JSHint.com service without a major error being identified.
 
+<br/>
+
 **Browser**
 This has been tested on Google Chrome, Mozilla Firefox, Microsoft Edge and Safari.
 
+<br/>
+
 **Device**
-As part of the development of media queries this website has been tested on a smallest device of an iPhone 5 at 320x568px, through to iPhone 6/7/8 at 414x736px, a SurfacePro, laptop at 1366x768px and desktop monitor at 1920x1080px.
+As part of the development of media queries this website has been tested on a smallest device of an iPhone 5 at 320x568px, through to iPhone 6/7/8 at 414x736px, SurfacePro & iPad tablets, laptop at 1366x768px and desktop monitor at 1920x1080px.
+
+<br/>
 
 **Performance**
  Lighthouse testing as part of the Chrome Developer Tools has been undertaken with the following initial results. The Amber 75% for Best Practices is as a result making requests from local host to HTTPS. This has occurred due to the nature of this task and would not be identified in production.
@@ -66,5 +75,6 @@ As part of the development of media queries this website has been tested on a sm
 <p align="center">
     <img src="readme-images/lighthouse-testing-results.png" alt="website page testing results"/>
 </p>
+<br/>
 
 

@@ -194,8 +194,11 @@ header {
 .description {
     margin-top: 0;
     margin-bottom: 0.25rem;
-    max-height: 3rem;
+    max-height: 4.9rem;
+    width: 140ch;
+    max-width: 20rem;
     overflow: hidden;
+    flex-flow: row wrap;
     font-size: small;
 }
 
@@ -307,7 +310,11 @@ footer {
         display: block;
         text-align: left;
         margin: 0;
-        padding-top: 0.25rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 1.5rem;
+        line-height: 3rem;
+
     }
 
     .nav-toggle:checked~nav {
@@ -328,10 +335,24 @@ footer {
     .standard-books-section {
         width: auto;
         order: 1;
+        margin: 2rem 0;
     }
 
     .standard-book-card {
         width: 23rem;
+        margin-top: 1.5rem;
+    }
+
+    .card-image img {
+        max-height: 6.5rem;
+    }
+
+    .card-contents {
+        margin-left: -0.5rem;
+    }
+
+    .description {
+        max-width: 17rem;
     }
 
     /* Featured books section */
@@ -385,10 +406,22 @@ footer {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    
+    /* || HEADER STYLES */
+    .header-logo {
+        padding-left: 16rem;
+    }
+}
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+/* Large devices (desktops, 1300px and up) */
+@media (min-width: 1300px) {
+
+    /* || HEADER STYLES */
+    .header-logo {
+        padding-left: 28rem;
+    }
+}
 
 /* Extra large devices (large desktops, 1920px and up) */
 @media (min-width: 1920px) {
