@@ -55,18 +55,18 @@ function fetchAPIBookDataFromGoogle() {
             }
         return response.json() })
     .then( json => {
+        // method to pass the json data to the createBook(), and add to HTML
         const books = json.items
-        const featured_books = json.items.slice(-2);
-        json.items
         const results = books.map(book=>createBook(book))
-        const outputs = featured_books.map(book=>createFeaturedBooks(book))
-        console.log(results);
-        console.log(outputs);
+        console.log(results)
         document.getElementById("book-listings-container").innerHTML = results.join("")
+        // method to slice the json data then pass to the createFeaturedBook(), and add to HTML
+        const featured_books = json.items.slice(-2);
+        const outputs = featured_books.map(book=>createFeaturedBooks(book))
+        console.log(outputs);
         document.getElementById("featured_books-listings-container").innerHTML = outputs.join("") })
     .catch(errorMessage=>console.error("Could not access Google API due to", errorMessage))
 };
-
 
 /**
  * On DOM page load the function to 
